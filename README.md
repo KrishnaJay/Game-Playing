@@ -1,14 +1,13 @@
 # Game-Playing
 Project description
 
-This project will provide you an opportunity to practice what you have learned about Game
-Playing in the class. In a typical zero sum two player game, players are generally competing for a
+This project is a practical implementation of game developement.
+In a typical zero sum two player game, players are generally competing for a
 certain common resource, and their gain is a function of their share of the resource. Often players
 have other challenges such as satisfying other constraints on other personal resources such as
-time, energy or computational power in the course of the game. In this homework we will
-introduce The Fruit Rage! a game that captures the nature of a zero sum two player game with
+time, energy or computational power in the course of the game. This is a game that captures the nature of a zero sum two player game with
 strict limitation on allocated time for reasoning.
-Your task is creating a software agent that can play this game against a human or another agent.
+The task is creating a software agent that can play this game against a human or another agent.
 
 Rules of the game
 
@@ -31,3 +30,9 @@ automatically lose the game. Hence you should think about strategies for best us
 (spend a lot of time on early moves, or on later moves?)
 The overall score of each player is the sum of rewards gained for every turn. The game will
 terminate when there is no fruit left in the box or when a player has run out of time.
+
+
+Approach and comments:
+The initial approach was to enumerate all the possible combinations till the end at a given stage and determine the next best move using mini-max algorithm. This naive approach is slow and inefficient from the runtime and memory point of view. 
+The fix was to use alpha-beta pruning which skips the moves that are guaranteed to not contribute dowards the decision. 
+
